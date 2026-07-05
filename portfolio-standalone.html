@@ -1,17 +1,20 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rajveer Kumar — Java Full Stack Developer</title>
-  <meta name="description" content="Portfolio of Rajveer Kumar, a Java Full Stack Developer specializing in Spring Boot, Hibernate, REST APIs and React." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
-  <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rajveer Kumar — Java Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Rajveer Kumar, a Java Full Stack Developer specializing in Spring Boot, Hibernate, REST APIs and React."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
 /* ── RESET & BASE ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -168,7 +171,11 @@ nav {
   transition: transform .3s, opacity .3s;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1040px) {
+  .nav-links a { padding: 7px 10px; font-size: .74rem; }
+  .nav-links { gap: 0; }
+}
+@media (max-width: 920px) {
   .hamburger { display: flex; }
   .nav-links {
     position: fixed; top: 64px; left: 0; right: 0;
@@ -181,8 +188,14 @@ nav {
     pointer-events: none;
   }
   .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: all; }
-  .nav-links a { padding: 13px 0; border-radius: 0; border-bottom: 1px solid var(--border-subtle); }
+  .nav-links a { padding: 13px 0; border-radius: 0; border-bottom: 1px solid var(--border-subtle); font-size: .82rem; }
   .nav-links li:last-child a { border-bottom: none; }
+  .nav-links li { width: 100%; }
+  .theme-btn { margin-top: 6px; }
+}
+@media (max-width: 400px) {
+  .nav-logo { font-size: .95rem; }
+  .nav-logo b { display: inline-block; max-width: 140px; }
 }
 
 /* ── HERO ─────────────────────────────────────────────────── */
@@ -361,7 +374,7 @@ nav {
 @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 36px; justify-items: center; text-align: center; } .about-photo { margin: 0 auto; } .about-stats { grid-template-columns: 1fr 1fr; } .about-text { text-align: left; } }
 
 /* ── PHOTO FRAME ──────────────────────────────────────────── */
-.about-photo { position: relative; width: 220px; height: 220px; flex-shrink: 0; }
+.about-photo { position: relative; width: 240px; height: 300px; flex-shrink: 0; }
 .photo-ring {
   width: 100%; height: 100%; border-radius: 26px;
   padding: 4px;
@@ -401,12 +414,13 @@ nav {
 .badge-orbit.b3 { bottom: -14px; left: -14px; animation-delay: 1.2s; }
 .badge-orbit.b4 { bottom: -14px; right: -14px; animation-delay: 1.8s; }
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-@media (max-width: 720px) { .about-photo { width: 180px; height: 180px; } .badge-orbit { width: 38px; height: 38px; font-size: 1.05rem; } }
+@media (max-width: 720px) { .about-photo { width: 200px; height: 250px; } .badge-orbit { width: 38px; height: 38px; font-size: 1.05rem; } }
 .about-text p { font-size: 1.02rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
 .about-text p:last-child { margin-bottom: 0; }
 .about-text strong { color: var(--text-primary); font-weight: 500; }
 
 .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 420px) { .about-stats { grid-template-columns: 1fr 1fr; gap: 10px; } .stat-card { padding: 16px 14px; } .stat-num { font-size: 1.6rem; } }
 .stat-card {
   background: var(--bg);
   border: 1px solid var(--border-subtle);
@@ -455,7 +469,7 @@ nav {
 
 /* ── PROJECTS ─────────────────────────────────────────────── */
 #projects { background: var(--bg-card); }
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; perspective: 1000px; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 20px; perspective: 1000px; }
 .project-card {
   background: var(--bg);
   border: 1px solid var(--border-subtle);
@@ -608,231 +622,359 @@ footer span { color: var(--accent); }
 }
 
 </style>
-</head>
-<body>
-  <div id="bootOverlay">
-    <div class="boot-box" id="bootBox"></div>
-  </div>
-
-  <div class="cursor-glow" id="cursorGlow"></div>
-
-  <nav>
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">
-        <span class="dots"><span></span><span></span><span></span></span>
-        <b>Rajveer.java</b>
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">about</a></li>
-        <li><a href="#skills">skills</a></li>
-        <li><a href="#projects">projects</a></li>
-        <li><a href="#education">education</a></li>
-        <li><a href="#contact">contact</a></li>
-        <li><button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☀</button></li>
-      </ul>
+  </head>
+  <body>
+    <div id="bootOverlay">
+      <div class="boot-box" id="bootBox"></div>
     </div>
-  </nav>
 
-  <!-- ── HERO ─────────────────────────────────────────────── -->
-  <section id="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-glow2"></div>
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge reveal"><span></span> open to new opportunities</div>
+    <div class="cursor-glow" id="cursorGlow"></div>
 
-          <h1 class="hero-title reveal">
-            Hi, I'm <span class="highlight">Rajveer Kumar</span>
-          </h1>
+    <nav>
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+          <span class="dots"><span></span><span></span><span></span></span>
+          <b>Rajveer</b>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+              ☀
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-          <div class="hero-role reveal">
-            <span class="brace mono">&lt;</span><span id="typedRole"></span><span class="role-cursor"></span><span class="brace mono">/&gt;</span>
+    <!-- ── HERO ─────────────────────────────────────────────── -->
+    <section id="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-glow2"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge reveal">
+              <span></span> Open to Internships
+            </div>
+
+            <h1 class="hero-title reveal">
+              Hi, I'm <span class="highlight">Rajveer Kumar</span>
+            </h1>
+
+            <div class="hero-role reveal">
+              <span class="brace mono">&lt;</span><span id="typedRole"></span
+              ><span class="role-cursor"></span
+              ><span class="brace mono">/&gt;</span>
+            </div>
+
+            <p class="hero-desc reveal">
+              I design and build
+              <strong>robust, scalable backend systems</strong> with Java and
+              Spring Boot, and connect them to clean, usable interfaces.
+              Comfortable across the stack — from a Hibernate entity to a REST
+              endpoint to the React screen that calls it.
+            </p>
+
+            <div class="hero-actions reveal">
+              <a href="#projects" class="btn-primary">
+                View Projects
+                <svg
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="#contact" class="btn-outline">Get in Touch</a>
+            </div>
+
+            <div class="hero-meta reveal">
+              <div class="hero-meta-item">
+                <svg
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"
+                  />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+                Gorakhpur, Uttar Pradesh, India
+              </div>
+              <div class="hero-meta-item">
+                <svg
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 3" />
+                </svg>
+                Available immediately
+              </div>
+              <div class="hero-meta-item">
+                <svg
+                  width="15"
+                  height="15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20 7 12 3 4 7l8 4 8-4Z" />
+                  <path d="M4 7v10l8 4 8-4V7" />
+                </svg>
+                Java · Spring Boot
+              </div>
+            </div>
           </div>
 
-          <p class="hero-desc reveal">
-            I design and build <strong>robust, scalable backend systems</strong> with Java and Spring Boot,
-            and connect them to clean, usable interfaces. Comfortable across the stack — from a Hibernate
-            entity to a REST endpoint to the React screen that calls it.
+          <div class="hero-avatar-wrap reveal">
+            <div class="ide-window">
+              <div class="ide-titlebar">
+                <span class="ide-dot r"></span><span class="ide-dot y"></span
+                ><span class="ide-dot g"></span>
+                <span class="ide-filename">PortfolioController.java</span>
+              </div>
+              <div class="ide-body" id="ideBody"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ────────────────────────────────────────────── -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-photo reveal">
+            <div class="photo-ring">
+              <div class="photo-frame">
+                <img
+                  src="img/myphoto.jpeg"
+                  alt="Rajveer Kumar"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                />
+                <div class="photo-fallback">RK</div>
+              </div>
+            </div>
+            <div class="badge-orbit b1" title="Java">☕</div>
+            <div class="badge-orbit b2" title="Spring Boot">🍃</div>
+            <div class="badge-orbit b3" title="MySQL">🗄️</div>
+            <div class="badge-orbit b4" title="React">⚛️</div>
+          </div>
+          <div>
+            <div class="section-header reveal">
+              <span class="section-tag">// About</span>
+              <h2 class="section-title">
+                Backend-first, <em>full-stack</em> by habit.
+              </h2>
+            </div>
+            <div class="about-text reveal">
+              <p>
+                I'm a <strong>B.Tech Computer Science student</strong> at Buddha Institute of Technology, Gorakhpur, graduating in 2027. Currently <strong>Java Full Stack Developer</strong> who enjoys the
+                part of building software most people skip past — the data
+                model, the API contract, the error case nobody planned for.
+                Spring Boot and Hibernate are where I spend most of my time,
+                turning requirements into services that are predictable under
+                load and easy for the next developer to read.
+              </p>
+              <p>
+                I pair that backend depth with enough
+                <strong>React and JavaScript</strong> to ship the interfaces
+                those APIs power, so I can take a feature from database schema
+                to a screen a user actually clicks on — without waiting on a
+                hand-off.
+              </p>
+              <p>
+                Outside of assigned work, I practice data structures and
+                algorithms daily and keep a habit of rebuilding small systems —
+                auth flows, task trackers, catalog APIs — to keep my
+                fundamentals sharp.
+              </p>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card reveal">
+              <div class="stat-num">4+</div>
+              <div class="stat-label">Projects Shipped</div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-num">10+</div>
+              <div class="stat-label">Technologies Used</div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-num">100+</div>
+              <div class="stat-label">DSA Problems Solved</div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-num">1+</div>
+              <div class="stat-label">Years Writing Java</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ───────────────────────────────────────────── -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// Skills</span>
+          <h2 class="section-title">The stack I build <em>with</em>.</h2>
+        </div>
+        <div id="skillsWrap"></div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ─────────────────────────────────────────── -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// Projects</span>
+          <h2 class="section-title">Things I've <em>shipped</em>.</h2>
+        </div>
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ── EDUCATION ────────────────────────────────────────── -->
+    <section id="education">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// Education</span>
+          <h2 class="section-title">How I got <em>here</em>.</h2>
+        </div>
+        <div class="timeline" id="timelineWrap"></div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ──────────────────────────────────────────── -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-inner">
+          <div class="section-header reveal" style="margin-bottom: 0">
+            <span class="section-tag">// contact</span>
+          </div>
+          <h2 class="contact-lead reveal">
+            Let's build something reliable together.
+          </h2>
+          <p class="contact-sub reveal">
+            Whether it's a backend that needs to hold up under real traffic, or
+            a full-stack feature that needs to ship end to end — I'd like to
+            hear about it.
           </p>
-
-          <div class="hero-actions reveal">
-            <a href="#projects" class="btn-primary">
-              View Projects
-              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <div class="contact-links">
+            <a
+              href="mailto:rajveer.kumar@example.com"
+              class="contact-item reveal"
+            >
+              <div class="contact-item-icon">
+                <svg
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m3 7 9 6 9-6" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-item-label">EMAIL</div>
+                <div class="contact-item-value">rajveergkp253@gmail.com</div>
+              </div>
+              <div class="contact-item-arrow">→</div>
             </a>
-            <a href="#contact" class="btn-outline">Get in Touch</a>
-          </div>
-
-          <div class="hero-meta reveal">
-            <div class="hero-meta-item">
-              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              India
-            </div>
-            <div class="hero-meta-item">
-              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-              Available immediately
-            </div>
-            <div class="hero-meta-item">
-              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7 12 3 4 7l8 4 8-4Z"/><path d="M4 7v10l8 4 8-4V7"/></svg>
-              Java · Spring Boot
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-avatar-wrap reveal">
-          <div class="ide-window">
-            <div class="ide-titlebar">
-              <span class="ide-dot r"></span><span class="ide-dot y"></span><span class="ide-dot g"></span>
-              <span class="ide-filename">PortfolioController.java</span>
-            </div>
-            <div class="ide-body" id="ideBody"></div>
+            <a
+              href="https://github.com/rajveer253"
+              target="_blank"
+              rel="noopener"
+              class="contact-item reveal"
+            >
+              <div class="contact-item-icon">
+                <svg
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.1 2.8 5 3.1 5 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 3.6 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-item-label">GITHUB</div>
+                <div class="contact-item-value">github.com/rajveer253</div>
+              </div>
+              <div class="contact-item-arrow">→</div>
+            </a>
+            <a
+              href="https://linkedin.com/in/rajveer253"
+              target="_blank"
+              rel="noopener"
+              class="contact-item reveal"
+            >
+              <div class="contact-item-icon">
+                <svg
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+                  />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-item-label">LINKEDIN</div>
+                <div class="contact-item-value">linkedin.com/in/rajveer253</div>
+              </div>
+              <div class="contact-item-arrow">→</div>
+            </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── ABOUT ────────────────────────────────────────────── -->
-  <section id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-photo reveal">
-          <div class="photo-ring">
-            <div class="photo-frame">
-              <img src="profile.jpg" alt="Rajveer Kumar"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="photo-fallback">RK</div>
-            </div>
-          </div>
-          <div class="badge-orbit b1" title="Java">☕</div>
-          <div class="badge-orbit b2" title="Spring Boot">🍃</div>
-          <div class="badge-orbit b3" title="MySQL">🗄️</div>
-          <div class="badge-orbit b4" title="React">⚛️</div>
-        </div>
-        <div>l̥ōl̥ō
-          <div class="section-header reveal">
-            <span class="section-tag">// About</span>
-            <h2 class="section-title">Backend-first, <em>full-stack</em> by habit.</h2>
-          </div>
-          <div class="about-text reveal">
-            <p>
-              I'm a <strong>Java Full Stack Developer</strong> who enjoys the part of building software
-              most people skip past — the data model, the API contract, the error case nobody planned for.
-              Spring Boot and Hibernate are where I spend most of my time, turning requirements into
-              services that are predictable under load and easy for the next developer to read.
-            </p>
-            <p>
-              I pair that backend depth with enough <strong>React and JavaScript</strong> to ship the
-              interfaces those APIs power, so I can take a feature from database schema to a screen a
-              user actually clicks on — without waiting on a hand-off.
-            </p>
-            <p>
-              Outside of assigned work, I practice data structures and algorithms daily and keep a habit
-              of rebuilding small systems — auth flows, task trackers, catalog APIs — to keep my
-              fundamentals sharp.
-            </p>
-          </div>
-        </div>
-        <div class="about-stats">
-          <div class="stat-card reveal"><div class="stat-num">4+</div><div class="stat-label">Projects Shipped</div></div>
-          <div class="stat-card reveal"><div class="stat-num">10+</div><div class="stat-label">Technologies Used</div></div>
-          <div class="stat-card reveal"><div class="stat-num">100+</div><div class="stat-label">DSA Problems Solved</div></div>
-          <div class="stat-card reveal"><div class="stat-num">2+</div><div class="stat-label">Years Writing Java</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <footer>
+      designed &amp; built by <span>Rajveer Kumar</span> · ©
+      <span id="year"></span>
+    </footer>
 
-  <!-- ── SKILLS ───────────────────────────────────────────── -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// skills</span>
-        <h2 class="section-title">The stack I build <em>with</em>.</h2>
-      </div>
-      <div id="skillsWrap"></div>
-    </div>
-  </section>
-
-  <!-- ── PROJECTS ─────────────────────────────────────────── -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// projects</span>
-        <h2 class="section-title">Things I've <em>shipped</em>.</h2>
-      </div>
-      <div class="projects-grid" id="projectsGrid"></div>
-    </div>
-  </section>
-
-  <!-- ── EDUCATION ────────────────────────────────────────── -->
-  <section id="education">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// education</span>
-        <h2 class="section-title">How I got <em>here</em>.</h2>
-      </div>
-      <div class="timeline" id="timelineWrap"></div>
-    </div>
-  </section>
-
-  <!-- ── CONTACT ──────────────────────────────────────────── -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-inner">
-        <div class="section-header reveal" style="margin-bottom: 0;">
-          <span class="section-tag">// contact</span>
-        </div>
-        <h2 class="contact-lead reveal">Let's build something reliable together.</h2>
-        <p class="contact-sub reveal">
-          Whether it's a backend that needs to hold up under real traffic, or a full-stack feature
-          that needs to ship end to end — I'd like to hear about it.
-        </p>
-        <div class="contact-links">
-          <a href="mailto:rajveer.kumar@example.com" class="contact-item reveal">
-            <div class="contact-item-icon">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            </div>
-            <div>
-              <div class="contact-item-label">EMAIL</div>
-              <div class="contact-item-value">rajveer.kumar@example.com</div>
-            </div>
-            <div class="contact-item-arrow">→</div>
-          </a>
-          <a href="https://github.com/rajveer253" target="_blank" rel="noopener" class="contact-item reveal">
-            <div class="contact-item-icon">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.1 2.8 5 3.1 5 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 3.6 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            </div>
-            <div>
-              <div class="contact-item-label">GITHUB</div>
-              <div class="contact-item-value">github.com/rajveer253</div>
-            </div>
-            <div class="contact-item-arrow">→</div>
-          </a>
-          <a href="https://linkedin.com/in/rajveer253" target="_blank" rel="noopener" class="contact-item reveal">
-            <div class="contact-item-icon">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </div>
-            <div>
-              <div class="contact-item-label">LINKEDIN</div>
-              <div class="contact-item-value">linkedin.com/in/rajveer253</div>
-            </div>
-            <div class="contact-item-arrow">→</div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    designed &amp; built by <span>Rajveer Kumar</span> · © <span id="year"></span>
-  </footer>
-
-  <script>
+    <script>
 /* ── BOOT SEQUENCE ───────────────────────────────────────── */
 const bootOverlay = document.getElementById("bootOverlay");
 const bootBox = document.getElementById("bootBox");
@@ -937,8 +1079,8 @@ const projects = [
 const timeline = [
   {
     role: "B.Tech in Computer Science & Engineering",
-    org: "// your.university.edu",
-    meta: ["2021 — 2025", "CGPA 8.2 / 10"],
+    org: "// Buddha Institute of Technology, Gorakhpur",
+    meta: ["2023 — 2027", "Currently pursuing"],
     desc: "Focused coursework in object-oriented programming, database systems, and data structures — the foundation for a Java-first backend career.",
     courses: ["OOP", "DBMS", "Data Structures", "Operating Systems", "Computer Networks"]
   },
@@ -1188,5 +1330,5 @@ const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 </script>
-</body>
+  </body>
 </html>

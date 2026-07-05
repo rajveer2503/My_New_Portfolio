@@ -154,7 +154,11 @@ nav {
   transition: transform .3s, opacity .3s;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1040px) {
+  .nav-links a { padding: 7px 10px; font-size: .74rem; }
+  .nav-links { gap: 0; }
+}
+@media (max-width: 920px) {
   .hamburger { display: flex; }
   .nav-links {
     position: fixed; top: 64px; left: 0; right: 0;
@@ -167,8 +171,14 @@ nav {
     pointer-events: none;
   }
   .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: all; }
-  .nav-links a { padding: 13px 0; border-radius: 0; border-bottom: 1px solid var(--border-subtle); }
+  .nav-links a { padding: 13px 0; border-radius: 0; border-bottom: 1px solid var(--border-subtle); font-size: .82rem; }
   .nav-links li:last-child a { border-bottom: none; }
+  .nav-links li { width: 100%; }
+  .theme-btn { margin-top: 6px; }
+}
+@media (max-width: 400px) {
+  .nav-logo { font-size: .95rem; }
+  .nav-logo b { display: inline-block; max-width: 140px; }
 }
 
 /* ── HERO ─────────────────────────────────────────────────── */
@@ -347,7 +357,7 @@ nav {
 @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 36px; justify-items: center; text-align: center; } .about-photo { margin: 0 auto; } .about-stats { grid-template-columns: 1fr 1fr; } .about-text { text-align: left; } }
 
 /* ── PHOTO FRAME ──────────────────────────────────────────── */
-.about-photo { position: relative; width: 220px; height: 220px; flex-shrink: 0; }
+.about-photo { position: relative; width: 240px; height: 300px; flex-shrink: 0; }
 .photo-ring {
   width: 100%; height: 100%; border-radius: 26px;
   padding: 4px;
@@ -387,12 +397,13 @@ nav {
 .badge-orbit.b3 { bottom: -14px; left: -14px; animation-delay: 1.2s; }
 .badge-orbit.b4 { bottom: -14px; right: -14px; animation-delay: 1.8s; }
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-@media (max-width: 720px) { .about-photo { width: 180px; height: 180px; } .badge-orbit { width: 38px; height: 38px; font-size: 1.05rem; } }
+@media (max-width: 720px) { .about-photo { width: 200px; height: 250px; } .badge-orbit { width: 38px; height: 38px; font-size: 1.05rem; } }
 .about-text p { font-size: 1.02rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 18px; }
 .about-text p:last-child { margin-bottom: 0; }
 .about-text strong { color: var(--text-primary); font-weight: 500; }
 
 .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 420px) { .about-stats { grid-template-columns: 1fr 1fr; gap: 10px; } .stat-card { padding: 16px 14px; } .stat-num { font-size: 1.6rem; } }
 .stat-card {
   background: var(--bg);
   border: 1px solid var(--border-subtle);
@@ -441,7 +452,7 @@ nav {
 
 /* ── PROJECTS ─────────────────────────────────────────────── */
 #projects { background: var(--bg-card); }
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; perspective: 1000px; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 20px; perspective: 1000px; }
 .project-card {
   background: var(--bg);
   border: 1px solid var(--border-subtle);

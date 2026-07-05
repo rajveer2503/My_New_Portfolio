@@ -102,8 +102,8 @@ const projects = [
 const timeline = [
   {
     role: "B.Tech in Computer Science & Engineering",
-    org: "// your.university.edu",
-    meta: ["2021 — 2025", "CGPA 8.2 / 10"],
+    org: "// Buddha Institute of Technology, Gorakhpur",
+    meta: ["2023 — 2027", "Currently pursuing"],
     desc: "Focused coursework in object-oriented programming, database systems, and data structures — the foundation for a Java-first backend career.",
     courses: ["OOP", "DBMS", "Data Structures", "Operating Systems", "Computer Networks"]
   },
