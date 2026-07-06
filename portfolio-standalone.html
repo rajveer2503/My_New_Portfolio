@@ -64,7 +64,7 @@ body {
 }
 a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
-section { padding: 100px 0; }
+section { padding: 100px 0; scroll-margin-top: 84px; }
 .mono { font-family: 'JetBrains Mono', monospace; }
 
 .container {
@@ -111,7 +111,7 @@ body::before {
 
 /* ── NAVBAR ───────────────────────────────────────────────── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: sticky; top: 0; left: 0; right: 0; z-index: 100;
   background: var(--nav-bg);
   backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--border-subtle);
@@ -203,7 +203,7 @@ nav {
   min-height: 100vh;
   display: flex; align-items: center;
   position: relative; overflow: hidden;
-  padding: 120px 0 80px;
+  padding: 60px 0 80px;
 }
 .hero-glow {
   position: absolute; top: -100px; right: -200px;
@@ -375,6 +375,7 @@ nav {
 
 /* ── PHOTO FRAME ──────────────────────────────────────────── */
 .about-photo { position: relative; width: 240px; height: 300px; flex-shrink: 0; }
+.photo-mask { width: 100%; height: 100%; border-radius: 26px; overflow: hidden; }
 .photo-ring {
   width: 100%; height: 100%; border-radius: 26px;
   padding: 4px;
@@ -620,7 +621,6 @@ footer span { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
 }
-
 </style>
   </head>
   <body>
@@ -767,17 +767,19 @@ footer span { color: var(--accent); }
       <div class="container">
         <div class="about-grid">
           <div class="about-photo reveal">
-            <div class="photo-ring">
-              <div class="photo-frame">
-                <img
-                  src="img/myphoto.jpeg"
-                  alt="Rajveer Kumar"
-                  onerror="
-                    this.style.display = 'none';
-                    this.nextElementSibling.style.display = 'flex';
-                  "
-                />
-                <div class="photo-fallback">RK</div>
+            <div class="photo-mask">
+              <div class="photo-ring">
+                <div class="photo-frame">
+                  <img
+                    src="img/myphoto.jpeg"
+                    alt="Rajveer Kumar"
+                    onerror="
+                      this.style.display = 'none';
+                      this.nextElementSibling.style.display = 'flex';
+                    "
+                  />
+                  <div class="photo-fallback">RK</div>
+                </div>
               </div>
             </div>
             <div class="badge-orbit b1" title="Java">☕</div>
